@@ -1,0 +1,32 @@
+type Query{
+    getBook(id:String):Book
+    getBooks:[Book]
+}
+
+type Mutation{
+    createBook(bookName:String, pages:Int,category:Category,authorName:String, age:Int):String
+    deleteAuthor(id:String):Boolean
+    updateBook(id:String,bookName:String,pages:Int,category:Category):String
+    updateAuthor(id:String,name:String,age:Int):String
+
+}
+
+type Book {
+    id:String
+    name:String
+    page:Int
+    author:Author
+    category:Category
+
+}
+type Author {
+    id:String
+    name:String
+    age:Int
+}
+
+enum Category {
+    HORROR,
+    COMEDY,
+    FANTASY
+}
